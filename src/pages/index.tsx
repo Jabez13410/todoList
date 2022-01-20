@@ -1,3 +1,4 @@
+import 'normalize.css';
 import styles from './index.less';
 
 export default function IndexPage() {
