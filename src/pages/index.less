@@ -1,3 +1,94 @@
-.title {
-  background: rgb(121, 242, 157);
+@asterisk-width: .15rem;
+@asterisk-height: 1.5rem;
+.asterisk-item (@angle: 0deg) {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  &::before {
+    position: absolute;
+    content: '';
+    left: 0; right: 0; top: 0; bottom: 0;
+    margin: auto;
+    width: @asterisk-width;
+    height: @asterisk-height;
+    background-color: orange;
+    transform: rotate(@angle);
+  }
+}
+html {
+  font-size: 5vw;
+}
+/*
+// 这里参考一篇文章https://mp.weixin.qq.com/s?__biz=Mzk0MDMwMzQyOA==&mid=2247492071&idx=1&sn=fb9ca8280e7ab0e99883caeddad2a03a&chksm=c2e114ccf5969dda55cdd0617f7c081b22c1fe59683456b7ced6efe6cded937194f4ea0df9d0&mpshare=1&srcid=0118PJyCGT9ZK9u2l57tyY1f&sharer_sharetime=1642778505835&sharer_shareid=8e59847cc0bd36f17ac9a61543d01966&from=singlemessage&scene=1&subscene=10000&clicktime=1642778653&enterid=1642778653&ascene=1&devicetype=android-29&version=2800105e&nettype=3gnet&lang=zh_CN&exportkey=A3p6AXEdBgJrLj9G2XL9A1M%3D&pass_ticket=oXQr2HsMT8yEfZu248V3X9EO8tUdvcpKapVx4FkRm0thj7ppbkdI0AhK5FT9hEvM&wx_header=3
+// .loading {
+//     background: rgba(0, 0, 0, .8);
+//     position: absolute;
+//     left: 0; top: 0; right: 0; bottom: 0;
+//     margin: auto;
+//     // transform: rotate(360deg);
+//     // animation: rotate 45s infinite linear;
+//     &::before {
+//       width: 2rem;
+//       height: 2rem;
+//       position: absolute;
+//       content: "";
+//       top: 0; left: 0; right: 0; bottom: 0;
+//       box-sizing: border-box;
+//       border-radius: 50%;
+//       border: 2px solid transparent;
+//       border-top: 2px solid rgba(255, 255, 255, .5);
+//       border-left: 2px solid rgba(255, 255, 255, .5);
+//       transform: rotate(720deg);
+//       animation: rotate 3s infinite ease-out;
+//     }
+//     &::after {
+//       width: 2rem;
+//       height: 2rem;
+//       position: absolute;
+//       content: "";
+//       top: 0px; left: 0px; right: 0px; bottom: 0px;
+//       box-sizing: border-box;
+//       border-radius: 50%;
+//       border: 7px solid transparent;
+//       // border-top: 7px solid rgba(0, 0, 0, .8);
+//       // border-left: 7px solid rgba(0, 0, 0, .8);
+//       transform: rotate(720deg);
+//       animation: rotate 3s infinite ease-in-out;
+//     }
+// }
+*/
+.loading {
+  position: fixed;
+  top:50%;
+  left: 50%;
+  width: 2rem;
+  height: 2rem;
+  transform: translateX(-50%) translateY(-50%);
+  animation: rotate 3s infinite linear;
+  .first {
+    .asterisk-item();
+  }
+  .second {
+    .asterisk-item(60deg);
+  }
+  .third {
+    .asterisk-item(-60deg);
+  }
+
+}
+.wrapper {
+  background-color: #1b1c33;
+  min-height: 100vh;
+  padding: 1rem;
+  .header {
+    color: #fff;
+  }
+}
+@keyframes rotate {
+  from {
+    transform: translateX(-50%) translateY(-50%) rotate(0);
+  }
+  to {
+    transform: translateX(-50%) translateY(-50%) rotate(360deg);
+  }
 }
