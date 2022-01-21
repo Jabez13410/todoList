@@ -1,5 +1,6 @@
 {
-  "private": true,
+  "name": "todo-list",
+  "version": "0.0.1",
   "scripts": {
     "start": "umi dev",
     "build": "umi build",
