@@ -1,0 +1,3 @@
+const DELAY_TIME = 1000;
+export const ADD_TODO_DELAY_TIME = DELAY_TIME;
+export const DELETE_TODO_DELAY_TIME = DELAY_TIME;

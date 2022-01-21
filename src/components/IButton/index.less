@@ -1,0 +1,25 @@
+@disabled-btn-color: rgb(119, 119, 119);
+@disabled-btn-background-color: rgb(172, 172, 172);
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    cursor: pointer;
+    min-width: 2.5rem;
+}
+.btn-text {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    &:hover {
+      color: #5b5b5b;
+    }
+}
+.btn-disabled {
+    color: @disabled-btn-color;;
+    cursor: not-allowed;
+    background-color: @disabled-btn-background-color;
+    padding: 0;
+    border: 2px solid @disabled-btn-background-color;
+}
